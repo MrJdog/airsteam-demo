@@ -808,6 +808,23 @@ p {
   margin-top: 18px;
 }
 
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 20px 0;
+  color: var(--charcoal-soft);
+  font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(9, 34, 29, 0.12);
+}
+
 .form-error {
   background: #fbe9e4;
   border: 1px solid #e0b3a3;

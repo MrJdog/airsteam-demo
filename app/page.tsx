@@ -1,0 +1,161 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import OpeningStatusBadge from "@/components/OpeningStatusBadge";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  name: "AirSteam",
+  url: "https://www.airsteam.dk/",
+  telephone: "+4528732928",
+  email: "Airsteam.dk@hotmail.com",
+  priceRange: "kr. 700–2800",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Jernbanegade 17",
+    addressLocality: "Grindsted",
+    postalCode: "7200",
+    addressCountry: "DK",
+  },
+  openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "17:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "14:00" },
+  ],
+};
+
+export default function HomePage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <section className="hero">
+        <div className="container hero-inner">
+          <div>
+            <span className="hero-eyebrow">Bilpleje i Grindsted</span>
+            <h1>Skinnende ren bil, indeni og udenpå</h1>
+            <p className="lede">
+              AirSteam giver din bil en skånsom og grundig behandling — indvendig rens, udvendig
+              vask og lakpleje, tilpasset din biltype.
+            </p>
+            <div className="hero-actions">
+              <Link className="btn btn-primary" href="/book">
+                Book en tid online
+              </Link>
+              <Link className="btn btn-ghost" href="/ydelser">
+                Se ydelser &amp; priser
+              </Link>
+            </div>
+            <OpeningStatusBadge />
+          </div>
+          <div className="hero-art">
+            <picture>
+              <source srcSet="/images/hero-carwash.webp" type="image/webp" />
+              <img
+                src="/images/hero-carwash.jpg"
+                alt="Bil under grundig skumvask hos AirSteam"
+                width={1200}
+                height={800}
+                loading="eager"
+                fetchPriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Vores ydelser</span>
+            <h2>Bilpleje, der passer til din bil</h2>
+            <p>Vi tilbyder skræddersyede pakker efter bilstørrelse — fra en hurtig indvendig frisktur til en grundig Guld-behandling.</p>
+          </div>
+          <div className="grid grid-3">
+            <article className="feature-card">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                <path d="M4 16c1-1 2-1.6 3-1.6s2 .6 3 .6 2-.6 3-.6 2 .6 3 .6 2-.6 3-1" />
+                <path d="M6 12l2-5a2 2 0 0 1 2-1.4h4A2 2 0 0 1 16 7l2 5" />
+                <rect x="4" y="12" width="16" height="6" rx="2" />
+              </svg>
+              <h3>Indvendig rengøring</h3>
+              <p>Måtter bankes, støvsuges og steames. Grundig aftørring af alle overflader for et frisk og rent kabinemiljø.</p>
+            </article>
+            <article className="feature-card">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                <path d="M3 12c2-5 6-8 9-8s7 3 9 8c-2 5-6 8-9 8s-7-3-9-8Z" />
+                <circle cx="12" cy="12" r="2.5" />
+              </svg>
+              <h3>Udvendig vask</h3>
+              <p>Skånsom håndvask der fjerner snavs og fastsiddende belægninger, uden at slide på lakken.</p>
+            </article>
+            <article className="feature-card">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                <path d="M12 3c3 3 6 5.5 6 10a6 6 0 0 1-12 0c0-4.5 3-7 6-10Z" />
+              </svg>
+              <h3>Polering &amp; lakpleje</h3>
+              <p>Voksbehandling der beskytter lakken mod vejr og snavs, og giver bilen en skinnende finish.</p>
+            </article>
+          </div>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <Link className="btn btn-outline" href="/ydelser">
+              Se alle pakker &amp; priser
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-dark">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Hvorfor AirSteam</span>
+            <h2>Grundigt håndværk, hver gang</h2>
+          </div>
+          <div className="grid grid-3">
+            <div className="feature">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M12 21s-7-4.35-9.5-8.8C.9 8.7 2.4 5 6 5c2 0 3.5 1.2 4 2.6C10.5 6.2 12 5 14 5c3.6 0 5.1 3.7 3.5 7.2C19 16.65 12 21 12 21Z" />
+              </svg>
+              <h3>Behandlet med omhu</h3>
+              <p>Din bil får samme grundige behandling hver gang — uanset størrelse eller pakke.</p>
+            </div>
+            <div className="feature">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M5 21c8 0 14-6 14-14V5h-2C9 5 5 11 5 19Z" />
+                <path d="M5 21c0-4 2-8 6-11" />
+              </svg>
+              <h3>Skånsomme metoder</h3>
+              <p>Vi bruger produkter og teknikker der beskytter lak og interiør frem for at slide på det.</p>
+            </div>
+            <div className="feature">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" />
+              </svg>
+              <h3>Hurtig &amp; fleksibel</h3>
+              <p>Book en tid der passer dig online, døgnet rundt.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="cta-banner">
+            <h2>Klar til en skinnende ren bil?</h2>
+            <p>Book en tid online — vælg bilstørrelse, pakke og tidspunkt på under et minut.</p>
+            <Link className="btn btn-primary" href="/book">
+              Book en tid nu
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

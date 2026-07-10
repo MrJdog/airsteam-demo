@@ -27,9 +27,16 @@ function todayISO(): string {
   return local.toISOString().slice(0, 10);
 }
 
-export default function BookingWizard({ packages }: { packages: PackageRow[] }) {
-  const [carSize, setCarSize] = useState<PackageRow["car_size"] | null>(null);
-  const [packageId, setPackageId] = useState<string | null>(null);
+export default function BookingWizard({
+  packages,
+  initialPackageId,
+}: {
+  packages: PackageRow[];
+  initialPackageId?: string;
+}) {
+  const preselected = packages.find((p) => p.id === initialPackageId) ?? null;
+  const [carSize, setCarSize] = useState<PackageRow["car_size"] | null>(preselected?.car_size ?? null);
+  const [packageId, setPackageId] = useState<string | null>(preselected?.id ?? null);
   const [date, setDate] = useState("");
   const [time, setTime] = useState<string | null>(null);
   const [slots, setSlots] = useState<string[] | null>(null);

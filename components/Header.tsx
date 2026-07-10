@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import AccountLink from "@/components/AccountLink";
 
 const LINKS = [
   { href: "/", label: "Forside" },
@@ -65,6 +66,7 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
+          <AccountLink />
           <button
             className="nav-toggle"
             aria-label="Åbn menu"

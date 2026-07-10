@@ -23,8 +23,13 @@ async function getPackages(): Promise<PackageRow[]> {
   return data ?? [];
 }
 
-export default async function BookPage() {
+export default async function BookPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ package?: string }>;
+}) {
   const packages = await getPackages();
+  const { package: initialPackageId } = await searchParams;
 
   return (
     <section className="section">
@@ -40,7 +45,7 @@ export default async function BookPage() {
             <p>Pakkerne kunne ikke indlæses lige nu. Prøv igen om lidt, eller ring til os på 28 73 29 28.</p>
           </div>
         ) : (
-          <BookingWizard packages={packages} />
+          <BookingWizard packages={packages} initialPackageId={initialPackageId} />
         )}
       </div>
     </section>

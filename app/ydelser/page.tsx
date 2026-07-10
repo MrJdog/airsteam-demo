@@ -97,6 +97,9 @@ export default async function YdelserPage() {
                       <h3>{pkg.name}</h3>
                       <div className="price">{pkg.price_kr.toLocaleString("da-DK")} kr.</div>
                       <p>{pkg.description}</p>
+                      <Link className="btn btn-outline btn-sm" href={`/book?package=${pkg.id}`} style={{ marginTop: 16 }}>
+                        Book denne pakke
+                      </Link>
                     </div>
                   ))}
                 </div>

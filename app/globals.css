@@ -144,6 +144,11 @@ p {
   color: var(--white);
 }
 
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.86rem;
+}
+
 .btn-block {
   width: 100%;
   justify-content: center;
@@ -155,8 +160,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(242, 250, 246, 0.92);
-  backdrop-filter: saturate(160%) blur(8px);
+  background: var(--mint);
   border-bottom: 1px solid rgba(9, 34, 29, 0.08);
   transition: box-shadow 0.2s ease;
 }
@@ -225,6 +229,27 @@ p {
 .main-nav ul a[aria-current="page"] {
   color: var(--teal);
   border-color: var(--teal);
+}
+
+.account-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--charcoal);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.account-link:hover {
+  background: rgba(9, 34, 29, 0.06);
+}
+
+.account-link svg {
+  width: 22px;
+  height: 22px;
 }
 
 .header-actions {

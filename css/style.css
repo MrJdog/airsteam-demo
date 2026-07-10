@@ -200,7 +200,7 @@ p {
   padding: 0;
 }
 
-.main-nav a {
+.main-nav ul a {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.96rem;
@@ -210,8 +210,8 @@ p {
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.main-nav a:hover,
-.main-nav a[aria-current="page"] {
+.main-nav ul a:hover,
+.main-nav ul a[aria-current="page"] {
   color: var(--teal);
   border-color: var(--teal);
 }

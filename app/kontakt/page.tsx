@@ -61,32 +61,20 @@ export default function KontaktPage() {
               </div>
 
               <div className="map-frame">
-                <div>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    width="40"
-                    height="40"
-                    style={{ margin: "0 auto 12px" }}
-                    aria-hidden="true"
-                  >
-                    <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
-                    <circle cx="12" cy="10" r="2.5" />
-                  </svg>
-                  <p style={{ marginBottom: 16 }}>
-                    <strong>Jernbanegade 17, 7200 Grindsted</strong>
-                  </p>
-                  <a
-                    className="btn btn-outline"
-                    href="https://www.google.com/maps/search/?api=1&query=Jernbanegade+17+7200+Grindsted"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Åbn rutevejledning
-                  </a>
-                </div>
+                <iframe
+                  src="https://maps.google.com/maps?q=Jernbanegade+17,+7200+Grindsted&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Kort over AirSteams placering på Jernbanegade 17, 7200 Grindsted"
+                />
+                <a
+                  className="btn btn-primary map-cta"
+                  href="https://www.google.com/maps/search/?api=1&query=Jernbanegade+17+7200+Grindsted"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Åbn rutevejledning
+                </a>
               </div>
             </div>
           </div>

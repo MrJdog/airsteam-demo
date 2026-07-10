@@ -59,6 +59,33 @@
 
       <div class="contact-grid">
         <div>
+          <form class="info-card" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <h2>Send os en besked</h2>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="Ny besked fra airsteam.dk" />
+            <input type="checkbox" name="botcheck" class="visually-hidden" style="display:none" tabindex="-1" autocomplete="off" />
+            <div id="form-feedback"></div>
+            <div class="form-field">
+              <label for="name">Navn</label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="subject-field">Emne</label>
+              <input id="subject-field" name="emne" type="text" />
+            </div>
+            <div class="form-field">
+              <label for="message">Besked</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send besked</button>
+          </form>
+        </div>
+
+        <div>
           <div class="info-card">
             <h2>Kontaktoplysninger</h2>
             <div class="info-line">
@@ -101,9 +128,7 @@
               <span data-status-text>Henter åbningstider…</span>
             </div>
           </div>
-        </div>
 
-        <div>
           <div class="map-frame">
             <div>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="40" height="40" style="margin:0 auto 12px;" aria-hidden="true">

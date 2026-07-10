@@ -122,4 +122,47 @@
 
   renderStatusBadges();
   highlightTodayRow();
+
+  /* ---------- Contact form (Web3Forms) ---------- */
+  var contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var feedback = document.getElementById("form-feedback");
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn.textContent;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sender…";
+      feedback.innerHTML = "";
+
+      fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          if (data.success) {
+            feedback.innerHTML =
+              '<div class="form-success">Tak! Din besked er sendt — vi vender tilbage hurtigst muligt.</div>';
+            contactForm.reset();
+          } else {
+            feedback.innerHTML =
+              '<div class="form-error">Der gik noget galt. Prøv igen, eller ring til os på 28 73 29 28.</div>';
+          }
+        })
+        .catch(function () {
+          feedback.innerHTML =
+            '<div class="form-error">Der gik noget galt. Prøv igen, eller ring til os på 28 73 29 28.</div>';
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        });
+    });
+  }
 })();

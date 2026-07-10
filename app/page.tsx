@@ -78,30 +78,69 @@ export default function HomePage() {
             <p>Vi tilbyder skræddersyede pakker efter bilstørrelse — fra en hurtig indvendig frisktur til en grundig Guld-behandling.</p>
           </div>
           <div className="grid grid-3">
-            <article className="feature-card">
-              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                <path d="M4 16c1-1 2-1.6 3-1.6s2 .6 3 .6 2-.6 3-.6 2 .6 3 .6 2-.6 3-1" />
-                <path d="M6 12l2-5a2 2 0 0 1 2-1.4h4A2 2 0 0 1 16 7l2 5" />
-                <rect x="4" y="12" width="16" height="6" rx="2" />
-              </svg>
-              <h3>Indvendig rengøring</h3>
-              <p>Måtter bankes, støvsuges og steames. Grundig aftørring af alle overflader for et frisk og rent kabinemiljø.</p>
-            </article>
-            <article className="feature-card">
-              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                <path d="M3 12c2-5 6-8 9-8s7 3 9 8c-2 5-6 8-9 8s-7-3-9-8Z" />
-                <circle cx="12" cy="12" r="2.5" />
-              </svg>
-              <h3>Udvendig vask</h3>
-              <p>Skånsom håndvask der fjerner snavs og fastsiddende belægninger, uden at slide på lakken.</p>
-            </article>
-            <article className="feature-card">
-              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                <path d="M12 3c3 3 6 5.5 6 10a6 6 0 0 1-12 0c0-4.5 3-7 6-10Z" />
-              </svg>
-              <h3>Polering &amp; lakpleje</h3>
-              <p>Voksbehandling der beskytter lakken mod vejr og snavs, og giver bilen en skinnende finish.</p>
-            </article>
+            <Link className="feature-card" href="/ydelser">
+              <picture>
+                <source srcSet="/images/card-indvendig.webp" type="image/webp" />
+                <img
+                  className="feature-card-image"
+                  src="/images/card-indvendig.jpg"
+                  alt="Indvendig rengøring af bil hos AirSteam"
+                  width={700}
+                  height={500}
+                  loading="lazy"
+                />
+              </picture>
+              <div className="feature-card-body">
+                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="M4 16c1-1 2-1.6 3-1.6s2 .6 3 .6 2-.6 3-.6 2 .6 3 .6 2-.6 3-1" />
+                  <path d="M6 12l2-5a2 2 0 0 1 2-1.4h4A2 2 0 0 1 16 7l2 5" />
+                  <rect x="4" y="12" width="16" height="6" rx="2" />
+                </svg>
+                <h3>Indvendig rengøring</h3>
+                <p>Måtter bankes, støvsuges og steames. Grundig aftørring af alle overflader for et frisk og rent kabinemiljø.</p>
+              </div>
+            </Link>
+            <Link className="feature-card" href="/ydelser">
+              <picture>
+                <source srcSet="/images/card-udvendig.webp" type="image/webp" />
+                <img
+                  className="feature-card-image"
+                  src="/images/card-udvendig.jpg"
+                  alt="Udvendig håndvask af bil hos AirSteam"
+                  width={700}
+                  height={500}
+                  loading="lazy"
+                />
+              </picture>
+              <div className="feature-card-body">
+                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="M3 12c2-5 6-8 9-8s7 3 9 8c-2 5-6 8-9 8s-7-3-9-8Z" />
+                  <circle cx="12" cy="12" r="2.5" />
+                </svg>
+                <h3>Udvendig vask</h3>
+                <p>Skånsom håndvask der fjerner snavs og fastsiddende belægninger, uden at slide på lakken.</p>
+              </div>
+            </Link>
+            <Link className="feature-card" href="/ydelser">
+              <picture>
+                <source srcSet="/images/card-polering.webp" type="image/webp" />
+                <img
+                  className="feature-card-image"
+                  src="/images/card-polering.jpg"
+                  alt="Polering og lakpleje af bil hos AirSteam"
+                  width={700}
+                  height={500}
+                  loading="lazy"
+                />
+              </picture>
+              <div className="feature-card-body">
+                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="M12 3c3 3 6 5.5 6 10a6 6 0 0 1-12 0c0-4.5 3-7 6-10Z" />
+                </svg>
+                <h3>Polering &amp; lakpleje</h3>
+                <p>Voksbehandling der beskytter lakken mod vejr og snavs, og giver bilen en skinnende finish.</p>
+              </div>
+            </Link>
           </div>
           <div style={{ textAlign: "center", marginTop: 40 }}>
             <Link className="btn btn-outline" href="/ydelser">

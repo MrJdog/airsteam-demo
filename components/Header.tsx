@@ -13,16 +13,18 @@ const LINKS = [
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const [lastPathname, setLastPathname] = useState(pathname);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    if (!isHome) return;
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     document.addEventListener("scroll", onScroll, { passive: true });
     return () => document.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
 
   // Close the mobile nav on navigation — adjusted during render (React's
   // recommended pattern for "reset state when a prop changes") instead of
@@ -32,13 +34,15 @@ export default function Header() {
     setNavOpen(false);
   }
 
+  const transparent = isHome && !scrolled && !navOpen;
+
   return (
-    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
+    <header className={`site-header${transparent ? " is-transparent" : ""}${scrolled ? " is-scrolled" : ""}`}>
       <div className="container header-inner">
         <Link className="logo" href="/">
           <picture>
-            <source srcSet="/images/logo.webp" type="image/webp" />
-            <img src="/images/logo.jpg" alt="AirSteam – Shine & Clean" width={750} height={362} />
+            <source srcSet="/images/logo-transparent.webp" type="image/webp" />
+            <img src="/images/logo-transparent.png" alt="AirSteam – Shine & Clean" width={750} height={362} />
           </picture>
         </Link>
 

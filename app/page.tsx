@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import OpeningStatusBadge from "@/components/OpeningStatusBadge";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -50,21 +49,24 @@ export default function HomePage() {
           </picture>
         </div>
         <div className="container hero-inner">
-          <span className="hero-eyebrow">Bilpleje i Grindsted</span>
+          <span className="hero-eyebrow">Professionel bilpleje | Grindsted</span>
           <h1>Skinnende ren bil, indeni og udenpå</h1>
           <p className="lede">
             AirSteam giver din bil en skånsom og grundig behandling — indvendig rens, udvendig
             vask og lakpleje, tilpasset din biltype.
           </p>
           <div className="hero-actions">
-            <Link className="btn btn-primary" href="/book">
-              Book en tid online
-            </Link>
-            <Link className="btn btn-ghost" href="/ydelser">
-              Se ydelser &amp; priser
+            <Link className="btn btn-ghost hero-cta" href="/book">
+              Book din tid
             </Link>
           </div>
-          <OpeningStatusBadge />
+        </div>
+        <div className="hero-scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M12 4v14" />
+            <path d="m6 13 6 6 6-6" />
+          </svg>
         </div>
       </section>
 

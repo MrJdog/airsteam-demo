@@ -159,23 +159,61 @@ p {
 /* ---------- Header ---------- */
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: var(--mint);
   border-bottom: 1px solid rgba(9, 34, 29, 0.08);
-  transition: box-shadow 0.2s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .site-header.is-scrolled {
   box-shadow: var(--shadow-sm);
 }
 
+.site-header.is-transparent {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.site-header.is-transparent .main-nav ul a,
+.site-header.is-transparent .account-link,
+.site-header.is-transparent .nav-toggle-bar,
+.site-header.is-transparent .nav-toggle-bar::before,
+.site-header.is-transparent .nav-toggle-bar::after {
+  color: #fff;
+}
+
+.site-header.is-transparent .main-nav ul a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-header.is-transparent .main-nav ul a[aria-current="page"] {
+  color: #fff;
+}
+
+.site-header.is-transparent .account-link {
+  color: #fff;
+}
+
+.site-header.is-transparent .nav-toggle-bar,
+.site-header.is-transparent .nav-toggle-bar::before,
+.site-header.is-transparent .nav-toggle-bar::after {
+  background: #fff;
+}
+
+.site-header.is-transparent .btn-primary.header-cta {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
+  padding: 10px 24px;
 }
 
 .logo {
@@ -185,9 +223,17 @@ p {
 }
 
 .logo img {
-  height: 46px;
+  height: 38px;
   width: auto;
   display: block;
+}
+
+main {
+  padding-top: 70px;
+}
+
+.hero {
+  margin-top: -70px;
 }
 
 .main-nav {
@@ -327,7 +373,12 @@ p {
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 780px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-eyebrow {
@@ -335,33 +386,72 @@ p {
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--white);
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
   margin-bottom: 18px;
 }
 
 .hero h1 {
   color: var(--white);
-  font-size: clamp(2.8rem, 3rem + 5vw, 6.4rem);
-  line-height: 0.92;
-  max-width: 14ch;
+  font-size: clamp(2.6rem, 2.2rem + 5vw, 5.6rem);
+  line-height: 0.95;
+  max-width: 18ch;
 }
 
 .hero p.lede {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.78);
   max-width: 46ch;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
   font-weight: 300;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 30px;
+}
+
+.hero-cta {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  padding: 16px 34px;
+}
+
+.hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero-scroll svg {
+  width: 16px;
+  height: 16px;
+  animation: hero-scroll-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 .status-badge {
@@ -1259,7 +1349,7 @@ p {
 @media (max-width: 720px) {
   .main-nav {
     position: fixed;
-    inset: 68px 0 0 0;
+    inset: 59px 0 0 0;
     background: var(--mint);
     flex-direction: column;
     align-items: stretch;

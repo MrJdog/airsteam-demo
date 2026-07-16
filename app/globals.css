@@ -560,6 +560,96 @@ p {
   background: var(--mint);
 }
 
+/* ---------- Testimonials ---------- */
+
+.stars {
+  color: var(--sky);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.testimonial {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(9, 34, 29, 0.06);
+}
+
+.testimonial p {
+  font-style: italic;
+  color: var(--charcoal-soft);
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-style: normal;
+  color: var(--charcoal);
+  margin-top: 14px;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(9, 34, 29, 0.08);
+  padding: 0 24px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 0;
+  font-weight: 700;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--teal);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  color: var(--charcoal-soft);
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+/* ---------- Visit us (homepage) ---------- */
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* ---------- Pricing (ydelser) ---------- */
 
 .pricing-tabs {
@@ -1142,7 +1232,8 @@ p {
     margin: 0 auto;
   }
 
-  .contact-grid {
+  .contact-grid,
+  .visit-grid {
     grid-template-columns: 1fr;
   }
 

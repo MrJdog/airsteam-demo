@@ -156,7 +156,7 @@ export default function HomePage() {
             <span className="eyebrow">Hvorfor AirSteam</span>
             <h2>Grundigt håndværk, hver gang</h2>
           </div>
-          <div className="grid grid-3">
+          <div className="grid grid-4">
             <div className="feature">
               <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M12 21s-7-4.35-9.5-8.8C.9 8.7 2.4 5 6 5c2 0 3.5 1.2 4 2.6C10.5 6.2 12 5 14 5c3.6 0 5.1 3.7 3.5 7.2C19 16.65 12 21 12 21Z" />
@@ -177,8 +177,15 @@ export default function HomePage() {
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 7v5l3 3" />
               </svg>
-              <h3>Hurtig &amp; fleksibel</h3>
-              <p>Book en tid der passer dig online, døgnet rundt.</p>
+              <h3>Book nemt online</h3>
+              <p>Vælg bilstørrelse, pakke og tidspunkt online, døgnet rundt.</p>
+            </div>
+            <div className="feature">
+              <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />
+              </svg>
+              <h3>Fair &amp; gennemsigtige priser</h3>
+              <p>Se alle priser på forhånd — ingen overraskelser når du henter bilen.</p>
             </div>
           </div>
         </div>
@@ -186,12 +193,125 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Kundeudtalelser</span>
+            <h2>Hvad vores kunder siger</h2>
+          </div>
+          <div className="grid grid-3">
+            <div className="testimonial">
+              <div className="stars" aria-hidden="true">★★★★★</div>
+              <p>&ldquo;Bilen var som ny efter Guld-pakken. Utroligt grundigt arbejde, og de tog sig virkelig god tid.&rdquo;</p>
+              <p className="testimonial-name">Mette L.</p>
+            </div>
+            <div className="testimonial">
+              <div className="stars" aria-hidden="true">★★★★★</div>
+              <p>&ldquo;Nem online booking og super venlig betjening. Kommer helt sikkert igen.&rdquo;</p>
+              <p className="testimonial-name">Kasper N.</p>
+            </div>
+            <div className="testimonial">
+              <div className="stars" aria-hidden="true">★★★★★</div>
+              <p>&ldquo;Indvendig rengøring fjernede pletter jeg troede var umulige at få væk. Kan varmt anbefales.&rdquo;</p>
+              <p className="testimonial-name">Sofie R.</p>
+            </div>
+            <div className="testimonial">
+              <div className="stars" aria-hidden="true">★★★★★</div>
+              <p>&ldquo;Professionel polering — lakken skinner virkelig flot nu. Værd for pengene.&rdquo;</p>
+              <p className="testimonial-name">Thomas B.</p>
+            </div>
+            <div className="testimonial">
+              <div className="stars" aria-hidden="true">★★★★☆</div>
+              <p>&ldquo;God service og fair priser. Blev færdig lidt hurtigere end forventet.&rdquo;</p>
+              <p className="testimonial-name">Ida K.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
           <div className="cta-banner">
             <h2>Klar til en skinnende ren bil?</h2>
             <p>Book en tid online — vælg bilstørrelse, pakke og tidspunkt på under et minut.</p>
             <Link className="btn btn-primary" href="/book">
               Book en tid nu
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Ofte stillede spørgsmål</span>
+            <h2>Alt du skal vide om bilpleje</h2>
+          </div>
+          <div className="faq-list">
+            <details className="faq-item">
+              <summary>Hvor lang tid tager en behandling?</summary>
+              <p>Det afhænger af pakken og bilens størrelse — en Indvendig-pakke tager typisk 45-60 minutter, mens en Guld-pakke kan tage op til 2 timer.</p>
+            </details>
+            <details className="faq-item">
+              <summary>Skal jeg booke tid på forhånd?</summary>
+              <p>Ja, vi anbefaler at booke online på forhånd, så vi kan sætte den rette tid af til din bil. Du booker nemt via &quot;Book en tid&quot; øverst på siden.</p>
+            </details>
+            <details className="faq-item">
+              <summary>Hvilke produkter bruger I?</summary>
+              <p>Vi bruger skånsomme, bilvenlige produkter der beskytter både lak og interiør, uden at gå på kompromis med resultatet.</p>
+            </details>
+            <details className="faq-item">
+              <summary>Tilbyder I mobil bilpleje, hvor I kommer ud til mig?</summary>
+              <p>Nej, i øjeblikket arbejder vi udelukkende fra vores værksted på Jernbanegade 17 i Grindsted.</p>
+            </details>
+            <details className="faq-item">
+              <summary>Hvad er forskellen på polering og voksbehandling?</summary>
+              <p>Polering fjerner små ridser og gør lakken blank, mens voksbehandling lægger et beskyttende lag ovenpå der værner mod vejr og snavs. Vores Sølv- og Guld-pakker inkluderer voksbehandling.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Besøg os</span>
+            <h2>Find os i Grindsted</h2>
+          </div>
+          <div className="visit-grid">
+            <div className="info-card" style={{ marginBottom: 0 }}>
+              <div className="info-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+                <span>Jernbanegade 17, 7200 Grindsted</span>
+              </div>
+              <div className="info-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5a11 11 0 0 0 5.5 5.5L15 13l5 2v2c0 1-1 2-2 2C10.5 19 4 12.5 4 5Z" />
+                </svg>
+                <a href="tel:+4528732928">28 73 29 28</a>
+              </div>
+              <div className="info-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
+                <a href="mailto:Airsteam.dk@hotmail.com">Airsteam.dk@hotmail.com</a>
+              </div>
+              <Link className="btn btn-outline" href="/kontakt" style={{ marginTop: 8 }}>
+                Kontakt os
+              </Link>
+            </div>
+            <div className="info-card" style={{ marginBottom: 0 }}>
+              <h2 style={{ fontSize: "1.1rem", marginBottom: 16 }}>Åbningstider</h2>
+              <table className="hours-table">
+                <tbody>
+                  <tr><td>Man–Fre</td><td>09:00–17:00</td></tr>
+                  <tr><td>Lørdag</td><td>10:00–14:00</td></tr>
+                  <tr><td>Søndag</td><td>Lukket</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

@@ -36,37 +36,35 @@ export default function HomePage() {
       />
 
       <section className="hero">
+        <div className="hero-art" aria-hidden="true">
+          <picture>
+            <source srcSet="/images/hero-carwash.webp" type="image/webp" />
+            <img
+              src="/images/hero-carwash.jpg"
+              alt=""
+              width={1200}
+              height={800}
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
+        </div>
         <div className="container hero-inner">
-          <div>
-            <span className="hero-eyebrow">Bilpleje i Grindsted</span>
-            <h1>Skinnende ren bil, indeni og udenpå</h1>
-            <p className="lede">
-              AirSteam giver din bil en skånsom og grundig behandling — indvendig rens, udvendig
-              vask og lakpleje, tilpasset din biltype.
-            </p>
-            <div className="hero-actions">
-              <Link className="btn btn-primary" href="/book">
-                Book en tid online
-              </Link>
-              <Link className="btn btn-ghost" href="/ydelser">
-                Se ydelser &amp; priser
-              </Link>
-            </div>
-            <OpeningStatusBadge />
+          <span className="hero-eyebrow">Bilpleje i Grindsted</span>
+          <h1>Skinnende ren bil, indeni og udenpå</h1>
+          <p className="lede">
+            AirSteam giver din bil en skånsom og grundig behandling — indvendig rens, udvendig
+            vask og lakpleje, tilpasset din biltype.
+          </p>
+          <div className="hero-actions">
+            <Link className="btn btn-primary" href="/book">
+              Book en tid online
+            </Link>
+            <Link className="btn btn-ghost" href="/ydelser">
+              Se ydelser &amp; priser
+            </Link>
           </div>
-          <div className="hero-art">
-            <picture>
-              <source srcSet="/images/hero-carwash.webp" type="image/webp" />
-              <img
-                src="/images/hero-carwash.jpg"
-                alt="Bil under grundig skumvask hos AirSteam"
-                width={1200}
-                height={800}
-                loading="eager"
-                fetchPriority="high"
-              />
-            </picture>
-          </div>
+          <OpeningStatusBadge />
         </div>
       </section>
 
@@ -150,7 +148,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-dark">
+      <section className="section section-alt">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Hvorfor AirSteam</span>

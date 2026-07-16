@@ -4,20 +4,20 @@
    ========================================================================== */
 
 :root {
-  --teal: #0d6b5e;
-  --teal-dark: #094f45;
-  --sky: #2f9bd6;
-  --sky-soft: #e4f2fa;
-  --mint: #f2faf6;
-  --mint-soft: #e3f2ea;
-  --charcoal: #16221f;
-  --charcoal-soft: #46564f;
+  --teal: #1e40af;
+  --teal-dark: #16337f;
+  --sky: #2f6fe4;
+  --sky-soft: #eaf0fd;
+  --mint: #ffffff;
+  --mint-soft: #f5f4f0;
+  --charcoal: #0f172a;
+  --charcoal-soft: #6b7280;
   --white: #ffffff;
-  --radius: 12px;
-  --shadow: 0 10px 30px -12px rgba(9, 34, 29, 0.3);
-  --shadow-sm: 0 4px 14px -6px rgba(9, 34, 29, 0.2);
-  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 0.75rem;
+  --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
+  --shadow-sm: 0 4px 14px -6px rgba(15, 23, 42, 0.12);
+  --serif: var(--font-bebas-neue), Impact, "Arial Narrow", sans-serif;
+  --sans: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --max: 1160px;
 }
 
@@ -34,6 +34,7 @@ html {
 body {
   margin: 0;
   font-family: var(--sans);
+  font-weight: 300;
   background: var(--mint);
   color: var(--charcoal);
   line-height: 1.6;
@@ -55,9 +56,10 @@ h2,
 h3,
 h4 {
   font-family: var(--serif);
-  line-height: 1.15;
+  line-height: 0.95;
   margin: 0 0 0.5em;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--charcoal);
 }
 
@@ -284,28 +286,40 @@ p {
 .hero {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 12% 15%, rgba(47, 155, 214, 0.22), transparent 42%),
-    radial-gradient(circle at 88% 5%, rgba(13, 107, 94, 0.35), transparent 45%),
-    linear-gradient(160deg, var(--charcoal) 0%, #142823 55%, var(--teal-dark) 135%);
-  color: var(--mint);
-  padding: 92px 0 104px;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  padding: 150px 0 100px;
 }
 
-.hero::after {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(242, 250, 246, 0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
-  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.35) 45%, rgba(15, 23, 42, 0.7));
+  z-index: 1;
+}
+
+.hero .hero-art {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  z-index: 0;
+}
+
+.hero .hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hero-inner {
   position: relative;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
-  align-items: center;
+  z-index: 2;
+  max-width: 780px;
 }
 
 .hero-eyebrow {
@@ -315,22 +329,24 @@ p {
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--sky);
+  color: var(--white);
   font-weight: 700;
   margin-bottom: 18px;
 }
 
 .hero h1 {
   color: var(--white);
-  font-size: clamp(2.3rem, 4.3vw, 3.4rem);
-  max-width: 16ch;
+  font-size: clamp(2.8rem, 3rem + 5vw, 6.4rem);
+  line-height: 0.92;
+  max-width: 14ch;
 }
 
 .hero p.lede {
-  font-size: 1.12rem;
-  color: rgba(242, 250, 246, 0.82);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.88);
   max-width: 46ch;
   margin-bottom: 32px;
+  font-weight: 300;
 }
 
 .hero-actions {
@@ -526,7 +542,7 @@ p {
 }
 
 .feature p {
-  color: rgba(242, 250, 246, 0.75);
+  color: var(--charcoal-soft);
   font-size: 0.96rem;
 }
 

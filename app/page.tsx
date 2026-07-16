@@ -72,10 +72,10 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Vores ydelser</span>
-            <h2>Bilpleje, der passer til din bil</h2>
-            <p>Vi tilbyder skræddersyede pakker efter bilstørrelse — fra en hurtig indvendig frisktur til en grundig Guld-behandling.</p>
+          <div className="section-head-left">
+            <h2>Vores services</h2>
+            <p>Fra en hurtig udvendig vask til komplet detailing — vi har løsningen til din bil.</p>
+            <span className="rule-short" aria-hidden="true" />
           </div>
           <div className="grid grid-3">
             <Link className="feature-card" href="/ydelser">
@@ -91,13 +91,11 @@ export default function HomePage() {
                 />
               </picture>
               <div className="feature-card-body">
-                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                  <path d="M4 16c1-1 2-1.6 3-1.6s2 .6 3 .6 2-.6 3-.6 2 .6 3 .6 2-.6 3-1" />
-                  <path d="M6 12l2-5a2 2 0 0 1 2-1.4h4A2 2 0 0 1 16 7l2 5" />
-                  <rect x="4" y="12" width="16" height="6" rx="2" />
-                </svg>
                 <h3>Indvendig rengøring</h3>
-                <p>Måtter bankes, støvsuges og steames. Grundig aftørring af alle overflader for et frisk og rent kabinemiljø.</p>
+                <p>Måtter bankes, støvsuges og steames. Grundig aftørring af alle overflader.</p>
+                <p className="price-tag">
+                  fra <strong>700</strong> kr
+                </p>
               </div>
             </Link>
             <Link className="feature-card" href="/ydelser">
@@ -113,12 +111,11 @@ export default function HomePage() {
                 />
               </picture>
               <div className="feature-card-body">
-                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                  <path d="M3 12c2-5 6-8 9-8s7 3 9 8c-2 5-6 8-9 8s-7-3-9-8Z" />
-                  <circle cx="12" cy="12" r="2.5" />
-                </svg>
-                <h3>Udvendig vask</h3>
-                <p>Skånsom håndvask der fjerner snavs og fastsiddende belægninger, uden at slide på lakken.</p>
+                <h3>Indvendig + udvendig</h3>
+                <p>Skånsom håndvask kombineret med indvendig rengøring.</p>
+                <p className="price-tag">
+                  fra <strong>900</strong> kr
+                </p>
               </div>
             </Link>
             <Link className="feature-card" href="/ydelser">
@@ -134,17 +131,17 @@ export default function HomePage() {
                 />
               </picture>
               <div className="feature-card-body">
-                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                  <path d="M12 3c3 3 6 5.5 6 10a6 6 0 0 1-12 0c0-4.5 3-7 6-10Z" />
-                </svg>
                 <h3>Polering &amp; lakpleje</h3>
-                <p>Voksbehandling der beskytter lakken mod vejr og snavs, og giver bilen en skinnende finish.</p>
+                <p>Voksbehandling der beskytter lakken og giver bilen en skinnende finish.</p>
+                <p className="price-tag">
+                  fra <strong>1.500</strong> kr
+                </p>
               </div>
             </Link>
           </div>
           <div style={{ textAlign: "center", marginTop: 40 }}>
-            <Link className="btn btn-outline" href="/ydelser">
-              Se alle pakker &amp; priser
+            <Link className="btn btn-primary" href="/ydelser" style={{ textTransform: "uppercase", letterSpacing: "0.08em", fontSize: "0.85rem" }}>
+              Se alle services
             </Link>
           </div>
         </div>

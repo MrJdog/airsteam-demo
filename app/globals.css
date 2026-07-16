@@ -533,6 +533,38 @@ main {
   text-align: center;
 }
 
+.section-head-left {
+  max-width: 640px;
+  margin: 0 0 52px;
+  text-align: left;
+}
+
+.section-head-left h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.section-head-left .rule-short {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--teal);
+  margin-top: 20px;
+}
+
+.price-tag {
+  font-size: 0.85rem;
+  color: var(--charcoal-soft);
+  margin-top: 12px;
+}
+
+.price-tag strong {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--charcoal);
+  margin: 0 3px;
+  font-weight: 400;
+}
+
 .eyebrow {
   display: block;
   font-size: 0.78rem;

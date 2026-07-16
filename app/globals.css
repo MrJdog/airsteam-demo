@@ -332,11 +332,11 @@ main {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 640px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   color: var(--white);
-  padding: 150px 0 100px;
+  padding: 150px 0 120px;
 }
 
 .hero::before {

@@ -50,7 +50,7 @@ export default function HomePage() {
         </div>
         <div className="container hero-inner">
           <span className="hero-eyebrow">Professionel bilpleje | Grindsted</span>
-          <h1>Skinnende ren bil, indeni og udenpå</h1>
+          <h1>Professionel bilpleje og detailing</h1>
           <p className="lede">
             AirSteam giver din bil en skånsom og grundig behandling — indvendig rens, udvendig
             vask og lakpleje, tilpasset din biltype.
